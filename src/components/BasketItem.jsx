@@ -1,9 +1,9 @@
 function BasketItem(props) {
 
-    const {id, name, price, quantity} = props;
+    const {id, name, price, quantity, removeFromBasket} = props;
 
     return <li className="collection-item">
-        {name} X{quantity} = {price} <span class="secondary-content"><i class="material-icons basket-delete">close</i></span>
+        {name} X{quantity} = {price * quantity} руб <span className="secondary-content" onClick={() => removeFromBasket(id)}><i className="material-icons basket-delete">close</i></span>
     </li>
 }
-export { BasketItem }
+export { BasketItem };
